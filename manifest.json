@@ -22,7 +22,7 @@
     "content_scripts": [
         {
             "matches": [
-                "https://discord.com/login"
+                "https://discord.com/*"
             ],
             "js": [
                 "assets/inject/login.js"
