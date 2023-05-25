@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "Discord token login",
+    "version": "0.1",
+    "description": "Login with any valid Discord token.",
+    "icons": {
+        "48": "/assets/icon/icon.svg",
+        "96": "/assets/icon/icon.svg"
+    },
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "browser_action": {
+        "default_icon": {
+            "48": "/assets/icon/icon.svg",
+            "96": "/assets/icon/icon.svg"
+        },
+        "default_title": "Discord token login",
+        "default_popup": "/assets/ui/markup/index.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://discord.com/login"
+            ],
+            "js": [
+                "assets/inject/login.js"
+            ]
+        }
+    ]
+}
