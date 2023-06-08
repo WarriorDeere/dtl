@@ -9,6 +9,10 @@ Install as temporary AddOn.
 
 **If you run this tool within an private/incognito tab make sure that you allow running addons within private tabs!**
 
+## Screenshot
+
+![image](https://github.com/WarriorDeere/login-addon/assets/107566982/ce90bac6-a8e5-49ef-a9ae-6e99b586267c)
+
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">login-addon</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/WarriorDeere/" property="cc:attributionName" rel="cc:attributionURL">Warrior Deere</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/WarriorDeere/login-addon" rel="dct:source">https://github.com/WarriorDeere/login-addon</a>. <br>
