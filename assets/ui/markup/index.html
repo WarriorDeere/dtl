@@ -7,29 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/assets/ui/style/main.css">
-    <script defer src="/assets/ui/script/script.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script type="module" defer src="/assets/ui/script/script.js"></script>
 </head>
 
 <body>
     <header class="banner">
         <img class="icon" src="/assets/icon/icon.svg">
-        <span class="title">Discord Token Login</span>
+        <span class="title">
+            <span class="bold-txt">D</span>iscord
+            <span class="bold-txt">T</span>oken
+            <span class="bold-txt">L</span>ogin</span>
     </header>
     <main>
+        <section class="ui-btn-area">
+            <div class="ui-btn">
+                <span class="material-symbols-outlined">
+                    settings
+                </span>
+            </div>
+            <div class="ui-btn">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </div>
+            <div class="ui-btn">
+                <span class="material-symbols-outlined">
+                    passkey
+                </span>
+            </div>
+            <div class="ui-btn">
+                <span class="material-symbols-outlined">
+                    password
+                </span>
+            </div>
+        </section>
         <section class="interface">
-            <button class="btn-green" id="run">
-                run addon
-            </button>
-            <!-- <button class="btn-red" id="stop">
-                stop addon
-            </button> -->
-            <!-- <button class="btn-gray" id="edit">
-                edit
-            </button> -->
-            <input type="text" id="token-in" placeholder="paste token here">
+            <form id="ui-form" method="get" target="_self" autocomplete="false">
+                <!-- <button class="btn-gray" id="edit">
+                    edit
+                </button> -->
+                <!-- <button class="btn-red" id="stop">
+                    stop addon
+                </button> -->
+                <input type="text" id="token-in" placeholder="paste token here"
+                    pattern="/[\w-]{24}\.[\w-]{6}\.[\w-]{27}/" required>
+                <input class="btn-green" id="run" type="submit" value="GO!">
+
+            </form>
         </section>
         <section class="output">
-            <code class="log" id="log"></code>
+            <code class="log" id="log" role="log"></code>
         </section>
     </main>
 </body>

@@ -1,4 +1,5 @@
-browser.runtime.onMessage.addListener((request, from, sendResponse) => {
+console.debug('login.js running');
+browser.runtime.onMessage.addListener((request, sendResponse) => {
     if (request.command === "RUN_LOGIN") {
         try {
             setInterval(() => {

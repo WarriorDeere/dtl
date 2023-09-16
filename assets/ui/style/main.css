@@ -9,8 +9,10 @@
     --green: #248046;
     --yellow: #FEE75C;
     --fuchsia: #EB459E;
+    --orange: #ff8800;
 
     --gray-hover: #373a3d;
+    --light-gray-hover: #3a3f44;
     --red-hover: #bb2c2e;
     --green-hover: #1b6436;
 
@@ -19,6 +21,11 @@
 
 * {
     overflow-x: hidden;
+    user-select: none;
+}
+
+.material-symbols-outlined{
+    overflow: hidden;
 }
 
 body,
@@ -43,20 +50,23 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    gap: 2rem;
     padding: 1.25rem 2rem;
     user-select: none;
 }
 
 .icon {
-    height: 5rem;
-    width: 5rem;
+    height: 2.5rem;
+    width: 2.5rem;
     pointer-events: none;
 }
 
 .title {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 400;
+}
+
+.bold-txt{
+    font-weight: 800;
 }
 
 main {
@@ -70,7 +80,7 @@ main {
     gap: 1rem;
 }
 
-.interface{
+.interface {
     background-color: var(--light-gray);
     padding: .5rem .75rem;
     border-radius: .4rem;
@@ -82,7 +92,9 @@ main {
     gap: .75rem;
 }
 
-button, input {
+button,
+input[type='text'],
+input[type='submit'] {
     all: unset;
     text-transform: uppercase;
     font-weight: 800;
@@ -98,7 +110,7 @@ button, input {
 }
 
 .btn-green {
-    background-color: var(--green);
+    background-color: var(--green) !important;
     color: white;
 }
 
@@ -127,7 +139,7 @@ button, input {
     color: var(--white-hover);
 }
 
-input[type='text']{
+input[type='text'] {
     background-color: var(--gray);
     color: white;
     cursor: text;
@@ -187,6 +199,33 @@ input[type='text']{
     color: white;
 }
 
-.clr-green{
+.clr-green {
     color: var(--green);
+}
+
+.ui-btn-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--light-gray);
+    padding: .5rem .75rem;
+    border-radius: .4rem;
+}
+
+.ui-btn-area .ui-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray);
+    padding: .75rem;
+    border-radius: 100%;
+    transition: background-color .25s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.ui-btn-area .ui-btn:hover {
+    background-color: var(--gray-hover);
 }

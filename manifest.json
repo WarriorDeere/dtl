@@ -1,7 +1,7 @@
 {
-    "manifest_version": 2,
-    "name": "Discord token login",
-    "version": "0.1",
+    "manifest_version": 3,
+    "name": "DTL (Discord Token Login)",
+    "version": "0.2",
     "description": "Login with any valid Discord token.",
     "icons": {
         "48": "/assets/icon/icon.svg",
@@ -9,14 +9,19 @@
     },
     "permissions": [
         "activeTab",
-        "storage"
+        "storage",
+        "clipboardRead",
+        "webRequest"
     ],
-    "browser_action": {
+    "page_action": {
+        "show_matches": [
+            "https://discord.com/*"
+        ],
         "default_icon": {
             "48": "/assets/icon/icon.svg",
             "96": "/assets/icon/icon.svg"
         },
-        "default_title": "Discord token login",
+        "default_title": "DTL (Discord Token Login)",
         "default_popup": "/assets/ui/markup/index.html"
     },
     "content_scripts": [
@@ -25,8 +30,26 @@
                 "https://discord.com/*"
             ],
             "js": [
-                "assets/inject/login.js"
+                "assets/inject/login.js",
+                "assets/inject/page.js"
+            ],
+            "css": [
+                "assets/inject/injected.css"
             ]
         }
-    ]
+    ],
+    "commands": {
+        "login-page-tab": {
+            "suggested_key": {
+                "default": "Alt+Shift+D"
+            },
+            "description": "Open the Discord login page in a new tab"
+        }
+    },
+    "background": {
+        "scripts": [
+            "assets/background/cmd.js"
+        ],
+        "type": "module"
+    }
 }

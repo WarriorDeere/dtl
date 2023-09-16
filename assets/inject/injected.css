@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+
+:root {
+    --blurple: #5865F2;
+
+    --gray: #2c2f33;
+    --light-gray: #454a50;
+    --red: #ED4245;
+    --green: #248046;
+    --yellow: #FEE75C;
+    --fuchsia: #EB459E;
+    --orange: #ff8800;
+
+    --gray-hover: #373a3d;
+    --light-gray-hover: #3a3f44;
+    --red-hover: #bb2c2e;
+    --green-hover: #1b6436;
+
+    --white-hover: #d4d4d4;
+}
+
+.dtl-btn {
+    position: fixed;
+    background-color: var(--gray);
+    border-radius: 1rem;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    margin: 1rem;
+    padding: .5rem;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .75rem;
+    box-shadow: 0 0 .75rem 0 rgba(0, 0, 0, .8);
+}
+
+.dtl-btn span {
+    cursor: pointer;
+    padding: .75rem;
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .25s ease-in-out;
+    border-radius: 1rem;
+    color: white;
+}
+
+.dtl-btn span:not(.dtl-icon){
+    background-color: var(--green);
+    border-radius: 100%;
+    padding: .5rem;
+}
+
+.dtl-btn span:not(.dtl-icon):hover {
+    background-color: var(--green-hover);
+}
+
+.dtl-icon {
+    background-color: var(--blurple);
+    border-radius: 1rem;
+    padding: 1rem;
+}
