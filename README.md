@@ -36,7 +36,7 @@ Currently Firefox Version 117 or higher
 ### **Version** ``v0.2.1 - Preview`` <br>
 **Released** ``17/09/2023`` <br>
 **Requirements** ``Firefox 117+`` <br>
-[Download](https://github.com/WarriorDeere/dtl/archive/refs/tags/v0.2.1.zip)
+[Download](https://github.com/WarriorDeere/dtl/archive/refs/tags/v0.2.1-preview.zip)
 
 ### **Version** ``v0.1`` <br>
 **Released** ``08/06/2023`` <br>
