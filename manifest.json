@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "DTL (Discord Token Login)",
-    "version": "0.2",
+    "version": "0.2.1",
     "description": "Login with any valid Discord token.",
     "icons": {
         "48": "/assets/icon/icon.svg",
@@ -11,6 +11,7 @@
         "activeTab",
         "storage",
         "clipboardRead",
+        "scripting",
         "webRequest"
     ],
     "page_action": {
@@ -34,7 +35,8 @@
                 "assets/inject/page.js"
             ],
             "css": [
-                "assets/inject/injected.css"
+                "assets/inject/injected.css",
+                "assets/shared/style/buttons.css"
             ]
         }
     ],

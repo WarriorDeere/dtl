@@ -24,7 +24,7 @@
     user-select: none;
 }
 
-.material-symbols-outlined{
+.material-symbols-outlined {
     overflow: hidden;
 }
 
@@ -65,7 +65,7 @@ body {
     font-weight: 400;
 }
 
-.bold-txt{
+.bold-txt {
     font-weight: 800;
 }
 
@@ -90,61 +90,6 @@ main {
     align-items: center;
     justify-content: flex-start;
     gap: .75rem;
-}
-
-button,
-input[type='text'],
-input[type='submit'] {
-    all: unset;
-    text-transform: uppercase;
-    font-weight: 800;
-    padding: .6rem .8rem;
-    border-radius: .2rem;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color .25s ease-in-out, color .25s ease-in-out;
-    user-select: none;
-}
-
-.btn-green {
-    background-color: var(--green) !important;
-    color: white;
-}
-
-.btn-green:hover {
-    background-color: var(--green-hover);
-    color: var(--white-hover);
-}
-
-.btn-red {
-    background-color: var(--red);
-    color: white;
-}
-
-.btn-red:hover {
-    background-color: var(--red-hover);
-    color: var(--white-hover);
-}
-
-.btn-gray {
-    background-color: var(--gray);
-    color: white;
-}
-
-.btn-gray:hover {
-    background-color: var(--gray-hover);
-    color: var(--white-hover);
-}
-
-input[type='text'] {
-    background-color: var(--gray);
-    color: white;
-    cursor: text;
-    text-transform: none;
-    font-weight: 400;
 }
 
 .log {
@@ -211,21 +156,4 @@ input[type='text'] {
     background-color: var(--light-gray);
     padding: .5rem .75rem;
     border-radius: .4rem;
-}
-
-.ui-btn-area .ui-btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--gray);
-    padding: .75rem;
-    border-radius: 100%;
-    transition: background-color .25s ease-in-out;
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.ui-btn-area .ui-btn:hover {
-    background-color: var(--gray-hover);
 }

@@ -1,28 +1,18 @@
 console.log('page.js runing');
 
 // container
-const container = document.createElement('div');
+const container = document.createElement('details');
 container.classList.add('dtl-btn');
 
+// inner container
+const innerContainer = document.createElement('span')
+innerContainer.classList.add('dtl-btn-inner-container')
+innerContainer.classList.add('accordion-content')
+
 // icon container
-const iconContainer = document.createElement('span')
+const iconContainer = document.createElement('summary')
 iconContainer.classList.add('dtl-icon')
-
-// menu button container
-const menuBtnContainer = document.createElement('span')
-menuBtnContainer.classList.add('dtl-menu-btn')
-const menuBtnIcon = document.createElement('span')
-menuBtnIcon.classList.add('material-symbols-outlined')
-menuBtnIcon.textContent = 'menu'
-menuBtnContainer.appendChild(menuBtnIcon)
-
-// login button container
-const loginBtnContainer = document.createElement('span')
-loginBtnContainer.classList.add('dtl-login-btn')
-const loginBtnIcon = document.createElement('span')
-loginBtnIcon.classList.add('material-symbols-outlined')
-loginBtnIcon.textContent = 'passkey'
-loginBtnContainer.appendChild(loginBtnIcon)
+iconContainer.setAttribute('role', 'button');
 
 // icon
 const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -46,9 +36,106 @@ group2.appendChild(path);
 group1.appendChild(group2);
 icon.appendChild(group1);
 
+// menu button container
+const menuBtnContainer = document.createElement('span')
+menuBtnContainer.classList.add('dtl-menu-btn')
+const menuBtnIcon = document.createElement('span')
+menuBtnIcon.classList.add('material-symbols-outlined')
+menuBtnIcon.textContent = 'menu'
+menuBtnContainer.appendChild(menuBtnIcon)
+menuBtnContainer.setAttribute('role', 'button');
+
+// login button container
+const loginBtnContainer = document.createElement('span')
+loginBtnContainer.classList.add('dtl-login-btn')
+const loginBtnIcon = document.createElement('span')
+loginBtnIcon.classList.add('material-symbols-outlined')
+loginBtnIcon.textContent = 'passkey'
+loginBtnContainer.appendChild(loginBtnIcon)
+loginBtnContainer.setAttribute('role', 'button');
+loginBtnContainer.id = 'dtl-login-btn'
+
 // add to DOM
 iconContainer.appendChild(icon);
 container.appendChild(iconContainer)
-container.appendChild(menuBtnContainer)
-container.appendChild(loginBtnContainer)
+innerContainer.appendChild(menuBtnContainer)
+innerContainer.appendChild(loginBtnContainer)
+container.appendChild(innerContainer)
 document.body.appendChild(container);
+
+// events
+const loginBtn = document.querySelector('#dtl-login-btn');
+loginBtn.addEventListener('click', async () => {
+    modifyPage.changeAuthbox()
+})
+
+// modify page elements
+
+class modify_page {
+    changeAuthbox() {
+        return new Promise((resolve, reject) => {
+            document.querySelectorAll('section').forEach((possibleAuthbox) => {
+                const possibleAuthboxClass = possibleAuthbox.className
+                if (possibleAuthboxClass.startsWith('authBox')) {
+                    possibleAuthbox.style.display = 'flex';
+                    possibleAuthbox.style.flexDirection = 'column';
+                    possibleAuthbox.style.gap = '.75rem';
+                    possibleAuthbox.style.width = 'fit-content';
+                    possibleAuthbox.style.margin = '8rem';
+                    possibleAuthbox.innerHTML = `
+                            <div class="login-ui-container">
+                                <span class="login-ui-btn btn-green dtl-btn-square">
+                                    <span class="login-ui-btn-title">
+                                        Add
+                                    </span>
+                                    <span class="material-symbols-outlined">
+                                        add
+                                    </span>
+                                </span>
+                                <span class="login-ui-btn btn-gray dtl-btn-square">
+                                    <span class="login-ui-btn-title">
+                                        Sort
+                                    </span>
+                                    <span class="material-symbols-outlined">
+                                        filter_list
+                                    </span>
+                                </span>
+                            </div >
+                            <div class="dtl-ao-container">
+                                <table class="dtl-ao">
+                                    <tr>
+                                        <th>Icon</th>
+                                        <th>DisplayName</th>
+                                        <th>ProfileName</th>
+                                        <th>ID</th>
+                                        <th>Token</th>
+                                        <th>Last Used</th>
+                                    </tr>
+                                    <tr>
+                                        <td><img class="dtl-ao-icon" src="https://cdn.discordapp.com/embed/avatars/0.png"></td>
+                                        <td>BlurpleGreenear</td>
+                                        <td>blurple_greenie2654</td>
+                                        <td>023019839132</td>
+                                        <td>0103ads1-sajahj32jsa-fsa77ftsf-23</td>
+                                        <td>10/09/2023</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img class="dtl-ao-icon" src="https://cdn.discordapp.com/embed/avatars/2.png"></td>
+                                        <td>WumpusLover3000</td>
+                                        <td>wumpie_doopsie</td>
+                                        <td>01843854355</td>
+                                        <td>af90afs1-s2ja438fc-sg23ewssa-fs32oaps0</td>
+                                        <td>15/09/2023</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        `;
+                    return resolve('success');
+                }
+                return reject('fail');
+            })
+        })
+    }
+}
+
+const modifyPage = new modify_page();

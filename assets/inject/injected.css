@@ -22,22 +22,50 @@
 
 .dtl-btn {
     position: fixed;
-    background-color: var(--gray);
     border-radius: 1rem;
     z-index: 999;
     top: 0;
     left: 0;
     margin: 1rem;
     padding: .5rem;
-    height: max-content;
+    cursor: pointer;
+}
+
+@keyframes details-show {
+    from {
+        opacity: 0;
+        transform: var(--details-translate, translateY(-0.5em));
+    }
+}
+
+.dtl-btn[open]>*:not(summary) {
+    animation: details-show 1s ease-in-out;
+}
+
+.dtl-btn[open] {
+    background-color: var(--gray);
+    transition: background-color 1.25s ease-in-out;
+}
+
+.dtl-btn[open] .dtl-icon {
+    box-shadow: none;
+}
+
+.dtl-btn-inner-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: .75rem;
-    box-shadow: 0 0 .75rem 0 rgba(0, 0, 0, .8);
+    margin: .75rem 0 .25rem 0;
 }
 
-.dtl-btn span {
+.dtl-btn summary {
+    box-shadow: 0 0 .75rem 0 rgba(0, 0, 0, .8);
+    list-style: none;
+}
+
+.dtl-btn-inner-container span,
+.dtl-btn summary {
     cursor: pointer;
     padding: .75rem;
     width: 2rem;
@@ -50,18 +78,71 @@
     color: white;
 }
 
-.dtl-btn span:not(.dtl-icon){
+.dtl-btn-inner-container span:not(.dtl-icon) {
     background-color: var(--green);
     border-radius: 100%;
     padding: .5rem;
 }
 
-.dtl-btn span:not(.dtl-icon):hover {
+.dtl-btn-inner-container span:not(.dtl-icon):hover {
     background-color: var(--green-hover);
 }
 
 .dtl-icon {
-    background-color: var(--blurple);
+    background-color: var(--light-gray);
     border-radius: 1rem;
     padding: 1rem;
+    transition: background-color .25s ease-in-out, box-shadow .75s ease-in-out;
+}
+
+.dtl-icon:hover {
+    background-color: var(--blurple);
+}
+
+.login-ui-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .75rem;
+    padding: .75rem;
+    background-color: var(--light-gray);
+    border-radius: .25rem;
+}
+
+.login-ui-btn-title {
+    font-weight: 500;
+}
+
+.dtl-ao-container {
+    padding: .75rem;
+    background-color: var(--light-gray);
+    border-radius: .25rem;
+    overflow: auto;
+}
+
+.dtl-ao th {
+    padding: .75rem;
+    color: white;
+    font-weight: 600;
+}
+
+.dtl-ao td {
+    background-color: var(--gray);
+    border-radius: .25rem;
+    transition: background-color .25s ease-in-out;
+    padding: .75rem;
+    margin: .2rem;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.dtl-ao td:hover {
+    background-color: var(--gray-hover);
+}
+
+.dtl-ao-icon {
+    border-radius: 100%;
+    object-fit: cover;
+    height: 3rem;
+    width: 3rem;
 }

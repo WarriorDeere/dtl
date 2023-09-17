@@ -1,0 +1,88 @@
+input[type='text'] {
+    all: unset;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: .6rem .8rem;
+    border-radius: .2rem;
+    background-color: var(--gray);
+    color: white;
+    cursor: text;
+    text-transform: none;
+    font-weight: 400;
+}
+
+.btn-gray,
+.btn-green,
+.btn-red {
+    all: unset;
+    font-weight: 800;
+    padding: .6rem .8rem;
+    border-radius: .2rem;
+    background-color: var(--gray);
+    color: white;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color .25s ease-in-out, color .25s ease-in-out;
+    user-select: none;
+}
+
+.btn-green {
+    background-color: var(--green);
+    color: white;
+}
+
+.btn-green:hover {
+    background-color: var(--green-hover);
+    color: var(--white-hover);
+}
+
+.btn-red {
+    background-color: var(--red);
+    color: white;
+}
+
+.btn-red:hover {
+    background-color: var(--red-hover);
+    color: var(--white-hover);
+}
+
+.btn-gray {
+    background-color: var(--gray);
+    color: white;
+}
+
+.btn-gray:hover {
+    background-color: var(--gray-hover);
+    color: var(--white-hover);
+}
+
+.dtl-btn-square {
+    border-radius: .25rem;
+    padding: .5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem;
+    cursor: pointer;
+}
+
+.dtl-btn-round {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray);
+    padding: .75rem;
+    border-radius: 100%;
+    transition: background-color .25s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.dtl-btn-round:hover {
+    background-color: var(--gray-hover);
+}

@@ -47,8 +47,7 @@ class ctm {
 export const cCons = new ctm();
 
 cCons.info('welcome to Discord token login!');
-cCons.info('you are using: v0.2');
-cCons.error('jeden scheiß reinschreiben den du willst');
+cCons.info('you are using: v0.2.1');
 
 const runScriptBtn = document.querySelector('#run');
 const tokenInputField = document.querySelector('#token-in');
