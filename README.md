@@ -1,5 +1,6 @@
-# Discord Token Login (DTL)
 
+# DISCONTINUED - no longer maintained!
+## Discord Token Login (DTL)
 ## Features
 
 ### Custom Shortcuts
